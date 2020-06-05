@@ -1,10 +1,14 @@
+---
+#Este es el playbook para desplegar la aplicacion 3tier
+#This is the playbook to deploy the three tier app
+
 - hosts: workstation
   gather_facts: true
   roles:
   - name: osp-facts
 
-# Setup front-end load balancer tier
-
+#Se configura el balanceador de cargar para la capa frontend
+#Config of the front-end load balancer
 
 - name: setup load-balancer tier
   hosts: frontends
@@ -13,7 +17,8 @@
     - {name: base-config, tags: base-config}
     - {name: lb-tier, tags: [lbs, haproxy]}
 
-# Setup application servers tier
+#Se configura la capa de servidor de aplicacion
+#Config application servers tier
 
 - name: setup app tier
   hosts: apps
@@ -23,7 +28,8 @@
     - {name: base-config, tags: base-config}
     - {name: app-tier, tags: [apps, tomcat]}
 
-# Setup database tier
+#Se configura la capa de bases de datos
+#Config the database tier
 
 - name: setup database tier
   become: yes
@@ -31,3 +37,4 @@
   roles:
     - {name: base-config, tags: base-config}
     - {name: db-tier, tags: [dbs, postgres]}
+
