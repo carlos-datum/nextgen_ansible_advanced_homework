@@ -1,4 +1,8 @@
-- hosts: workstation
+---
+#Este playbook llama al rol osp-instance-delete
+#This Playbook it's to call role for osp-instance-delete
+
+  - hosts: workstation
   become: yes
   roles:
     - osp-instance-delete
