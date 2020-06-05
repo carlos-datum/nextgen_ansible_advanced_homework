@@ -1,6 +1,11 @@
+---
+#Verifica si la instancia aws esta funcionando 
+#Check if instance aws are working
+
 - hosts: all
   gather_facts: false
   tasks:
+  
   - name: Check the instances status
     wait_for:
       host: "{{ item }}"
@@ -10,4 +15,4 @@
     delegate_to: localhost
     with_items:
       - "{{ inventory_hostname }}"
-        
+      
