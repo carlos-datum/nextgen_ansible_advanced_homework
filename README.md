@@ -1,12 +1,28 @@
 Role Name
 =========
+El objetivo de este laboratorio para RedHat Ansible es poder configurar un ambiente de Test y uno de PROD de la aplicacion "3 tier app", mensionada en el modulo laboratorio #7 del curso: "Advanced Deployment with Red Hat Ansible Automation", parte del camino de formacion "Red Hat Delivery Specialist - Automation II"
 
-A brief description of the role goes here.
+English:
+The objective of this laboratory for RedHat Ansible is to be able to configure a Test environment and a PROD environment for the "3 tier app", mentioned in laboratory module # 7 of the course: "Advanced Deployment with Red Hat Ansible Automation", part of the learning path: "Red Hat Delivery Specialist - Automation II" training
+
+Informacion del laboratorio: (Lab info)
+Nombre: Red Hat Delivery Specialist - Automation II
+Documento de trabajo: http://etherpad-opentlc-shared.apps.shared.na.openshift.opentlc.com/p/ansible-advanced-jkupfere-2020-05-18 
+Video de Bluejeans: https://bluejeans.com/242710144 .   https://app.slack.com/client/T010CSHBZEE/C01378E34QH/  
+Gestión del entorno del laboratorio: https://labs.opentlc.com 
+Contenido de diapositivas y laboratorio: http://slides-gpte-ansible-slides.apps.shared.na.openshift.opentlc.com/ansible/ 
+
+Metas: (Goals)
+-Desplegar el laboratorio de Ansible tower donde se configura tower en HA y el laboratorio de OpenStack
+-Configurar la comunicacion entre Bastion del lab de Tower con Workstation del lab de OpenStack para que este ultimo sea el nodo aislado
+
+English
+-Display the Ansible tower lab where you configure HA tower and the OpenStack lab
+-Configure the communication between Bastion of the Tower lab with Workstation of the OpenStack lab so that the latter is the isolated node
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
 Role Variables
 --------------
@@ -18,15 +34,6 @@ Dependencies
 
 A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
-Example Playbook
-----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
 License
 -------
 
@@ -35,4 +42,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Carlos Moran - Presales Consultant at Datum El Salvador
