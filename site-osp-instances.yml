@@ -1,3 +1,7 @@
+---
+#Este playbook es para llamar al rol osp-servers 
+#This Playbook it to call role for osp-servers
+
 - hosts: localhost
   connection: local
   become: no
