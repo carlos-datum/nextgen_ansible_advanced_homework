@@ -1,4 +1,7 @@
 ---
+#Se utiliza order_svc.sh para aprovisionar ambiente de produccion
+#To use script order_svc.sh to provision PROD environment
+
 - hosts: workstation
   become: true
   gather_facts: false
