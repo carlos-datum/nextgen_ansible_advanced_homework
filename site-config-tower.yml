@@ -1,3 +1,7 @@
+---
+#Este es el playbook es para configurar plantillas de trabajo de Ansible Tower y flujo de trabajo 
+#This Playboook it's to call role to configure ansible tower templates and workflow
+
 - hosts: localhost
   gather_facts: false 
   become: yes 
