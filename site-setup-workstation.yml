@@ -1,4 +1,6 @@
-# Playbook to setup workstation and create osp network, router, SG and ssh keypair
+---
+#Este playbook es para configurar la estacion de trabajo, red, ruteo, etc
+#This Playbook it's to setup workstation and create osp network and router
 
 - hosts: localhost
   tasks:
@@ -14,4 +16,5 @@
     - setup-workstation
 
 - import_playbook: site-install-isolated-node.yml 
+
 
