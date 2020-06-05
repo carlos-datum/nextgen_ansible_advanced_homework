@@ -1,16 +1,22 @@
+---
+#Este playbook es para realizar la prueba de humo sobre la aplicacion 3tier en UAT
+#This Playbook it's to realize the smoke test to three tier app on UAT
+
 - hosts: frontends
   gather_facts: false
   tasks:
+  
   - name: Curl website
     uri:
       url: "http://localhost"
       return_content: yes
       status_code: 200
-    register: webpage
+    register: r_webpage
         
-  - debug: var=webpage.content
+  - debug: 
+      var: r_webpage.content
 
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:
-    when: "'Ansible has done its job' not in webpage.content"
+    when: "'Ansible has done its job' not in r_webpage.content"
 
