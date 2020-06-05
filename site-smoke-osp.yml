@@ -1,11 +1,30 @@
+---
+#Este playbook es para realizar la prueba de humo sobre la aplicacion 3tier
+#This Playbook it's to realize the smoke test to three tier app on OSP
+
 - hosts: workstation
   gather_facts: false
   tasks:
+
   - name: OpenStack servers
+    os_server_info:
+     cloud: openstack
+     server: 'frontend'
+    register: r_os_server_info
+    
   - name: Curl website
+    uri:
+     url: "http://{{item.public_v4}}"
+     return_content: yes
+    with_items:
+      - "{{ r_os_server_info.openstack_servers }}"
+    register: r_webpage
+
+  - debug:
+      var: r_webpage.results[0].content
 
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:
-    when: "'Ansible has done its job' not in webpage.results[0].content"
+    when: "'Ansible has done its job' not in r_webpage.results[0].content"
     tags:
       - osp.smoke
